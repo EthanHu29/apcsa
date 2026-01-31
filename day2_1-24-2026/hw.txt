@@ -1,0 +1,40 @@
+//I'm a bit confused by the GradeCalculator part
+import java.util.Scanner;
+public class hw {
+    public static void main(String[] arg){
+        Scanner keyboard = new Scanner(System.in);
+        int n = keyboard.nextInt();
+        double avgscore = 0.0;
+        boolean shouldprint = true;
+        for(int i = 0; i<n; i++){
+            int tmp = keyboard.nextInt();
+            if(tmp < 0 || tmp > 100){
+                System.out.println("invalid input");
+                shouldprint = false;
+                break;
+            }
+            else{
+                avgscore += tmp;
+            }
+        }
+        avgscore/=n;
+        if(shouldprint == true){
+            System.out.println(avgscore);
+            if(avgscore<=100 && avgscore >= 90){
+                System.out.println("A");
+            }
+            else if(avgscore<90 && avgscore >= 80){
+                System.out.println("B");
+            }
+            else if(avgscore<80 && avgscore >= 70){
+                System.out.println("C");
+            }
+            else if(avgscore<70 && avgscore >= 60){
+                System.out.println("D");
+            }
+            else if(avgscore<60 && avgscore >= 0){
+                System.out.println("F");
+            }
+        }
+    }
+}
